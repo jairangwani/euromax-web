@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Euromax — Networking &amp; Structured Cabling Solutions | UAE since 2001</title>
+<meta name="description" content="Euromax is a Dubai-based supplier of copper and fibre-optic networking and structured-cabling infrastructure, trusted across the UAE since 2001." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0d2340; --navy-2:#122c52; --steel:#1f4e79; --accent:#12b5c9; --accent-2:#0ea5b7;
+    --ink:#0f172a; --muted:#5b6b82; --line:#e6ebf2; --bg:#ffffff; --bg-soft:#f5f8fc; --white:#fff;
+    --radius:14px; --shadow:0 10px 30px rgba(13,35,64,.10); --max:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  .accent{color:var(--accent)}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
+  .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;padding:.85rem 1.5rem;border-radius:999px;border:1px solid transparent;transition:.18s;cursor:pointer}
+  .btn-primary{background:var(--accent);color:#04262b;box-shadow:0 8px 22px rgba(18,181,201,.35)}
+  .btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn-dark{background:var(--navy);color:#fff}
+  .btn-dark:hover{background:var(--steel)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(13,35,64,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:.7rem;color:#fff;font-weight:800;font-size:1.28rem;letter-spacing:.02em}
+  .logo{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--accent),#2563eb);display:grid;place-items:center;box-shadow:0 6px 16px rgba(18,181,201,.4)}
+  .logo svg{width:22px;height:22px}
+  .navlinks{display:flex;align-items:center;gap:2rem}
+  .navlinks a{color:#cdd8e8;font-weight:500;font-size:.95rem;transition:.15s}
+  .navlinks a:hover{color:#fff}
+  .navtoggle{display:none;background:none;border:0;color:#fff;cursor:pointer}
+
+  /* Hero */
+  .hero{position:relative;background:radial-gradient(1200px 500px at 80% -10%,rgba(18,181,201,.22),transparent 60%),linear-gradient(160deg,var(--navy),var(--navy-2) 60%,#0a1c34);color:#fff;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(600px 400px at 78% 20%,#000,transparent 75%);opacity:.6}
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:78px 0 90px}
+  .hero h1{font-size:3.05rem;font-weight:800;margin:.7rem 0 1rem}
+  .hero p.lead{font-size:1.18rem;color:#c6d3e6;max-width:560px}
+  .hero-cta{display:flex;gap:.8rem;margin-top:1.9rem;flex-wrap:wrap}
+  .badge-since{display:inline-flex;align-items:center;gap:.5rem;background:rgba(18,181,201,.12);border:1px solid rgba(18,181,201,.35);color:#8ef0fb;padding:.4rem .9rem;border-radius:999px;font-weight:600;font-size:.82rem;letter-spacing:.03em}
+  .hero-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px;backdrop-filter:blur(6px)}
+  .hero-card h4{color:#fff;font-size:1rem;margin-bottom:14px;font-weight:600}
+  .spec{display:flex;align-items:center;gap:.7rem;padding:11px 0;border-top:1px solid rgba(255,255,255,.08);color:#d5e0f0;font-size:.94rem}
+  .spec:first-of-type{border-top:0}
+  .spec svg{width:20px;height:20px;flex:0 0 20px;color:var(--accent)}
+
+  /* Stats bar */
+  .stats{background:var(--navy);border-top:1px solid rgba(255,255,255,.07)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px 22px}
+  .stat{text-align:center;color:#fff}
+  .stat b{display:block;font-size:1.9rem;font-weight:800;color:#fff}
+  .stat span{color:#9fb2cc;font-size:.86rem;font-weight:500}
+
+  /* Sections */
+  section.block{padding:88px 0}
+  .bg-soft{background:var(--bg-soft)}
+  .sec-head{max-width:720px;margin:0 auto 52px;text-align:center}
+  .sec-head h2{font-size:2.15rem;font-weight:800;margin:.6rem 0 .7rem;color:var(--navy)}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .about h2{font-size:2.1rem;color:var(--navy);margin:.5rem 0 1rem;font-weight:800}
+  .about p{color:#42506a;margin-bottom:1rem}
+  .about-visual{background:linear-gradient(150deg,var(--navy),var(--steel));border-radius:var(--radius);min-height:340px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .about-visual::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(18,181,201,.5) 0 2px,transparent 2px 14px);opacity:.5}
+  .about-visual .vlabel{position:absolute;left:24px;bottom:22px;right:24px;color:#dbe6f5}
+  .about-visual .vlabel b{color:#fff;font-size:1.15rem;display:block}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.18s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cfe6ea}
+  .card .ic{width:48px;height:48px;border-radius:11px;background:linear-gradient(135deg,rgba(18,181,201,.15),rgba(37,99,235,.12));display:grid;place-items:center;margin-bottom:15px}
+  .card .ic svg{width:24px;height:24px;color:var(--steel)}
+  .card h3{font-size:1.12rem;color:var(--navy);margin-bottom:.5rem}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .prod{position:relative;border-radius:var(--radius);overflow:hidden;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:#fff;box-shadow:var(--shadow)}
+  .prod.p1{background:linear-gradient(160deg,#134e6f,#0d2340)}
+  .prod.p2{background:linear-gradient(160deg,#0e7490,#0d2340)}
+  .prod.p3{background:linear-gradient(160deg,#1e3a8a,#0d2340)}
+  .prod.p4{background:linear-gradient(160deg,#155e75,#0d2340)}
+  .prod .picon{position:absolute;top:20px;right:20px;opacity:.9}
+  .prod .picon svg{width:34px;height:34px;color:var(--accent)}
+  .prod h3{font-size:1.12rem;margin-bottom:.35rem}
+  .prod p{font-size:.88rem;color:#c6d3e6}
+
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .why h2{font-size:2.1rem;color:var(--navy);font-weight:800;margin:.4rem 0 1rem}
+  .whylist{list-style:none;display:grid;gap:16px}
+  .whylist li{display:flex;gap:.9rem;align-items:flex-start}
+  .whylist .chk{flex:0 0 26px;width:26px;height:26px;border-radius:50%;background:rgba(18,181,201,.14);display:grid;place-items:center;margin-top:2px}
+  .whylist .chk svg{width:15px;height:15px;color:var(--accent-2)}
+  .whylist b{color:var(--navy)}
+  .whylist span{color:var(--muted);font-size:.95rem}
+
+  .standards{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:8px}
+  .std{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.7rem 1.15rem;font-weight:600;color:var(--navy);font-size:.92rem}
+  .std svg{width:18px;height:18px;color:var(--accent-2)}
+
+  /* Contact */
+  .contact{display:grid;grid-template-columns:.95fr 1.05fr;gap:46px}
+  .contact h2{font-size:2.1rem;color:#fff;font-weight:800;margin-bottom:1rem}
+  .contact .info p{color:#c6d3e6;margin-bottom:1.2rem;max-width:420px}
+  .cline{display:flex;align-items:center;gap:.8rem;color:#e2eaf6;margin-bottom:1rem;font-size:.98rem}
+  .cline svg{width:20px;height:20px;color:var(--accent)}
+  form{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+  form label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin:0 0 .35rem}
+  form input,form textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:.75rem .85rem;font-family:inherit;font-size:.95rem;margin-bottom:1rem;transition:.15s}
+  form input:focus,form textarea:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px rgba(18,181,201,.15)}
+  form button{width:100%;justify-content:center}
+
+  footer{background:#081627;color:#8fa3bd;padding:34px 0;font-size:.9rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot .brand{font-size:1.05rem}
+
+  @media(max-width:900px){
+    .hero-inner,.about,.why,.contact{grid-template-columns:1fr}
+    .cards,.prod-grid{grid-template-columns:1fr 1fr}
+    .stats .wrap{grid-template-columns:1fr 1fr}
+    .hero h1{font-size:2.3rem}
+    .navlinks{display:none}
+    .navtoggle{display:block}
+    .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--navy);padding:18px 22px;gap:1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+  }
+  @media(max-width:560px){.cards,.prod-grid,.stats .wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="7" cy="7" r="1.6" fill="#04262b"/><circle cx="12" cy="12" r="1.6" fill="#04262b"/><circle cx="17" cy="17" r="1.6" fill="#04262b"/></svg></span>
+      EUROMAX
+    </a>
+    <nav class="navlinks" id="nav">
+      <a href="#about">About</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#products">Products</a>
+      <a href="#partner">Partner With Us</a>
+      <a href="#contact" class="btn btn-primary" style="padding:.6rem 1.15rem">Request a Quote</a>
+    </nav>
+    <button class="navtoggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="badge-since">● Trusted across the UAE since 2001</span>
+      <h1>Networking &amp; Structured Cabling <span class="accent">Solutions</span></h1>
+      <p class="lead">Euromax supplies copper and fibre-optic cabling infrastructure to contractors, integrators, and enterprises across the United Arab Emirates — backed by two decades of technical expertise and direct manufacturer partnerships.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Partner With Us →</a>
+        <a href="#products" class="btn btn-ghost">View Product Range</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h4>Core cabling infrastructure</h4>
+      <div class="spec"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M4 7h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> CAT5e / CAT6 / CAT6A copper network cable</div>
+      <div class="spec"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12c4 0 4-6 8-6s4 12 8 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Single-mode &amp; multi-mode fibre (OM3 / OM4)</div>
+      <div class="spec"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M8 15v2M16 15v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Patch cords, panels &amp; connectivity</div>
+      <div class="spec"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7-7 9-4-2-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Standards-compliant, UAE-ready supply</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>2001</b><span>Established in the UAE</span></div>
+    <div class="stat"><b>20+ yrs</b><span>Networking &amp; cabling experience</span></div>
+    <div class="stat"><b>Dubai</b><span>Headquartered in the Emirates</span></div>
+    <div class="stat"><b>Copper + Fibre</b><span>Full cabling portfolio</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="block" id="about">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow">About Euromax</span>
+      <h2>Two decades supplying the UAE's networks</h2>
+      <p>Founded in <strong>2001</strong>, Euromax has grown from a Dubai-based electronics and IT-hardware trader into one of the UAE's trusted names in <strong>networking and structured cabling</strong>. For over twenty years we have supplied contractors, system integrators, and enterprises across the Emirates with reliable copper and fibre-optic cabling infrastructure.</p>
+      <p>Our strength lies in a deep local distribution network combined with direct, long-standing relationships with leading manufacturers. Every product we supply is selected to meet international performance standards and UAE regulatory requirements — backed by in-house technical expertise and a commitment to quality that has kept our clients returning for more than two decades.</p>
+      <p style="color:#94a3b8;font-size:.85rem;font-style:italic">Draft copy — edit freely.</p>
+    </div>
+    <div class="about-visual">
+      <div class="vlabel"><b>From Dubai to every emirate</b>Structured cabling &amp; connectivity, delivered to spec.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="block bg-soft" id="capabilities">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>End-to-end cabling supply &amp; distribution</h2>
+      <p>We source, import, and distribute the physical layer that keeps businesses connected — with the quality assurance and compliance the UAE market demands.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7h13l5 5-5 5H3" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Import &amp; Sourcing</h3>
+        <p>Direct sourcing from vetted manufacturers, with consistent bulk volumes and reliable lead times into the UAE.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v6H4zM4 13h16v6H4z" stroke="currentColor" stroke-width="2"/><circle cx="7" cy="8" r="1" fill="currentColor"/><circle cx="7" cy="16" r="1" fill="currentColor"/></svg></div>
+        <h3>Supply &amp; Distribution</h3>
+        <p>A strong local network delivering copper and fibre cabling to contractors and integrators across every emirate.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7-7 9-4-2-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Quality &amp; Compliance</h3>
+        <p>Products selected to international performance standards and supplied in line with UAE regulatory requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="block" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Product range</span>
+      <h2>Our networking portfolio</h2>
+      <p>A complete structured-cabling offering — from the desk to the data centre.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod p1">
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M4 7h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <h3>Copper Network Cable</h3>
+        <p>CAT5e, CAT6 &amp; CAT6A — U/UTP &amp; F/FTP, indoor &amp; outdoor.</p>
+      </div>
+      <div class="prod p2">
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12c4 0 4-6 8-6s4 12 8 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <h3>Fibre Optic Cable</h3>
+        <p>Single-mode &amp; multi-mode, OM3 / OM4, armoured &amp; loose-tube.</p>
+      </div>
+      <div class="prod p3">
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/></svg></span>
+        <h3>Patch Cords &amp; Connectivity</h3>
+        <p>Copper &amp; fibre patch cords, keystones, adapters &amp; jacks.</p>
+      </div>
+      <div class="prod p4">
+        <span class="picon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 9v11" stroke="currentColor" stroke-width="2"/></svg></span>
+        <h3>Structured Cabling &amp; Racks</h3>
+        <p>Patch panels, cable management, racks, cabinets &amp; accessories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PARTNER -->
+<section class="block bg-soft" id="partner">
+  <div class="wrap why">
+    <div>
+      <span class="eyebrow">For manufacturers &amp; partners</span>
+      <h2>Why partner with Euromax</h2>
+      <p style="color:var(--muted);margin-bottom:1.4rem">A reliable, established UAE gateway for your cabling products — with the local reach and technical rigour to move real volume.</p>
+      <ul class="whylist">
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Established since 2001</b> — <span>a recognised name in UAE networking &amp; cabling, not a newcomer.</span></div></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Strong local distribution</b> — <span>direct access to contractors and integrators across all seven emirates.</span></div></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Consistent bulk volumes</b> — <span>dependable, repeatable orders and long-term partnership.</span></div></li>
+        <li><span class="chk"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Certification &amp; compliance handled locally</b> — <span>we manage UAE conformity and approvals on the ground.</span></div></li>
+      </ul>
+    </div>
+    <div>
+      <div class="sec-head" style="text-align:left;margin-bottom:24px">
+        <span class="eyebrow">Standards we work to</span>
+        <h2 style="font-size:1.5rem">Built &amp; supplied to spec</h2>
+      </div>
+      <div class="standards" style="justify-content:flex-start">
+        <span class="std"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7-7 9-4-2-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2"/></svg> ISO/IEC 11801</span>
+        <span class="std"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7-7 9-4-2-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2"/></svg> TIA/EIA-568</span>
+        <span class="std"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7-7 9-4-2-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2"/></svg> RoHS Compliant</span>
+        <span class="std"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7-7 9-4-2-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2"/></svg> UAE Conformity</span>
+      </div>
+      <p style="color:#94a3b8;font-size:.82rem;font-style:italic;margin-top:16px">Standards shown are illustrative — confirm exact certifications with Jai before publishing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block" id="contact" style="background:linear-gradient(160deg,var(--navy),#0a1c34);">
+  <div class="wrap contact">
+    <div class="info">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let's talk cabling</h2>
+      <p>Whether you're a manufacturer looking for a UAE partner or a client sourcing networking cable, our team is ready to help.</p>
+      <div class="cline"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.4 7-11a7 7 0 10-14 0c0 4.6 7 11 7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg> Dubai, United Arab Emirates <span style="color:#7c8ba4">&nbsp;(full address — TBD)</span></div>
+      <div class="cline"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2"/></svg> info@euromax.example <span style="color:#7c8ba4">&nbsp;(email — TBD)</span></div>
+      <div class="cline"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l-2-4-4-1-2-2-2-2-1-4-4-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> +971 — — — — <span style="color:#7c8ba4">&nbsp;(phone — TBD)</span></div>
+    </div>
+    <form onsubmit="event.preventDefault(); window.location.href='mailto:info@euromax.example?subject=Website enquiry from '+encodeURIComponent(this.name.value)+'&body='+encodeURIComponent(this.message.value+'\n\nFrom: '+this.name.value+' ('+this.email.value+')');">
+      <label>Name</label>
+      <input name="name" required placeholder="Your name / company" />
+      <label>Email</label>
+      <input name="email" type="email" required placeholder="you@company.com" />
+      <label>Message</label>
+      <textarea name="message" rows="4" required placeholder="Tell us what you're looking for…"></textarea>
+      <button type="submit" class="btn btn-primary">Send Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brand"><span class="logo" style="width:30px;height:30px"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span>EUROMAX</span>
+    <span>© 2001–2026 Euromax. Networking &amp; structured cabling, UAE. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
